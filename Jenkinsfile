@@ -8,17 +8,17 @@ pipeline {
     }
   }
 
-    stages{
-        stage('Clean'){
-            steps{
-                 cleanWs()
-            }
-        }
-    stage('Install Dependences'){
-            steps{
-                sh 'npm install'
-            }
-        }
-
+  stages {
+    stage('Clean') {
+      steps {
+        deleteDir()
+      }
     }
+
+    stage('Install Dependencies') {
+      steps {
+        sh 'npm install'
+      }
+    }
+  }
 }
