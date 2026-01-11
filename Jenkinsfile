@@ -9,12 +9,6 @@ pipeline {
   }
 
   stages {
-    stage('Clean') {
-      steps {
-        deleteDir()
-      }
-    }
-
     stage('Install Dependencies') {
       steps {
         sh 'npm install'
